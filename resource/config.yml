@@ -1,0 +1,14 @@
+#Load Balancer by xFlare
+#Redirects clients to multiple servers.
+
+#How many servers do you have & want to redirct players to?
+number: 0
+
+Servers:
+#Example: "hg.flarehubpe.com"
+""
+""
+""
+""
+""
+""
