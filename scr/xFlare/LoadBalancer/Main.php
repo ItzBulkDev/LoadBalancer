@@ -20,7 +20,7 @@ class Main extends PluginBase implements Listener{
             $this->startPlugin($config);
         }
     }
-    public fuction startPlugin(){
+    public fuction startPlugin($config){
         if($config->get("version") === 1.0.0){
             $this->switchServer();
         }
@@ -28,6 +28,7 @@ class Main extends PluginBase implements Listener{
              $this->getLogger()->info(TextFormat::RED."- Incorrect plugin verion. Disableing plugin...");
              $this->disablePlugin();
         }
-        
-        
+    }
+    public function switchServer(){
+        foreach()
     }
