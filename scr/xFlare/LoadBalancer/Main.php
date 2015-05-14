@@ -9,7 +9,6 @@ use pocketmine\Server;
 class Main extends PluginBase implements Listener{
     public function onEnable(){
         $this->saveDefaultConfig();
-        $config = $this->getConfig();
-        $random_server = rand(0, $number);
+        $this->getLoggers()->console("X| LoadBalancer by xFlare has beern enabled.");
     }
 }
