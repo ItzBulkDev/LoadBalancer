@@ -30,5 +30,17 @@ class Main extends PluginBase implements Listener{
         }
     }
     public function switchServer(){
-        foreach()
+        $this->getLogger()->info(TextFormat::RED."> Switching the redirect server...");
+        $server_number = 0;
+        foreach($this->getConfig->get("Servers") as $server){
+            if($sevrer !== false){
+                $server_number++;
+            }
+        }
+        $set_server = rand(0, $server_number);
+        if($set_server === 0){
+            $myserver = $this->getConfig()->get("Servers");
+            $myserver = $myserver[0];
+            $this->getLogger()->info(TextFormat::RED."- Server set to: $myserver");
+        }
     }
