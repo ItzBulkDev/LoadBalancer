@@ -41,6 +41,10 @@ class Main extends PluginBase implements Listener{
         if($set_server === 0){
             $myserver = $this->getConfig()->get("Servers");
             $myserver = $myserver[0];
-            $this->getLogger()->info(TextFormat::RED."- Server set to: $myserver");
+            $this->getLogger()->info(TextFormat::GREEN."- Server set to: $myserver");
         }
+    }
+    public function disbalePlugin(){
+        $this->getLogger()->info(TextFormat::RED."- Disableing plugin...r");
+        $this->getConfig()->set("enabled", false);
     }
