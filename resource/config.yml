@@ -14,5 +14,7 @@ Servers:
 ""
 ""
 
+##################################
 #For external use DO NOT EDIT.
 current-server: ""
+version: 1.0.0
