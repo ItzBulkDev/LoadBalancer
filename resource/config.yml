@@ -4,7 +4,6 @@
 #How many servers do you have & want to redirct players to?
 number: 0
 
-
 Servers:
 #Example: "hg.flarehubpe.com"
 ""
@@ -14,6 +13,10 @@ Servers:
 ""
 ""
 
+##################################
+# Messages, you can set/change from default.
+redirect: "> Redirecting you to another server..."
+error: "- An error has occured"
 ##################################
 #For external use DO NOT EDIT.
 current-server: ""
