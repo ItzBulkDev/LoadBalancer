@@ -25,7 +25,7 @@ class Main extends PluginBase implements Listener{
             $this->switchServer();
         }
         else{
-             $this->getLogger()->info(TextFormat::RED."- Incorrect plugin verion. Disableing plugin...");
+             $this->getLogger()->info(TextFormat::RED."- Incorrect plugin version. Disabling plugin...");
              $this->disablePlugin();
         }
     }
@@ -33,7 +33,7 @@ class Main extends PluginBase implements Listener{
         $this->getLogger()->info(TextFormat::RED."> Switching the redirect server...");
         $server_number = 0;
         foreach($this->getConfig->get("Servers") as $server){
-            if($sevrer !== false){
+            if($server !== false){
                 $server_number++;
             }
         }
@@ -45,6 +45,6 @@ class Main extends PluginBase implements Listener{
         }
     }
     public function disbalePlugin(){
-        $this->getLogger()->info(TextFormat::RED."- Disableing plugin...r");
+        $this->getLogger()->info(TextFormat::RED."- Disabling plugin...r");
         $this->getConfig()->set("enabled", false);
     }
