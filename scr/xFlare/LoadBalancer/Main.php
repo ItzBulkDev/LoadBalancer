@@ -47,5 +47,6 @@ class Main extends PluginBase implements Listener{
     public function disablePlugin(){
         $this->getLogger()->info(TextFormat::RED."- Disabling plugin...");
         $this->getConfig()->set("enabled", false);
+        $this->getConfig()->save();
     }
 }
