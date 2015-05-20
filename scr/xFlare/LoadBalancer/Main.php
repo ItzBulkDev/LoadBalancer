@@ -32,7 +32,7 @@ class Main extends PluginBase implements Listener{
     public function switchServer(){
         $this->getLogger()->info(TextFormat::RED."> Switching the redirect server...");
         $server_number = 0;
-        foreach($this->getConfig->get("Servers") as $server){
+        foreach($this->getConfig->getNested()->get("Servers") as $server){
             if($server !== false){
                 $server_number++;
             }
