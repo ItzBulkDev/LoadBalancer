@@ -12,7 +12,7 @@ class Main extends PluginBase implements Listener{
         $this->getLogger()->info(TextFormat::GREEN."> Loading plugin, checking config...");
         $config = $this->getConfig();
         if($config->get("enable") === true){
-            $this->getLogger()->info(TextFormat::RED."- You must enable the plugin by turning "enable" to true in config.yml");
+            $this->getLogger()->info(TextFormat::RED.'- You must enable the plugin by turning "enable" to true in config.yml');
             $this->disablePlugin();
         }
         else{
@@ -20,12 +20,12 @@ class Main extends PluginBase implements Listener{
             $this->startPlugin($config);
         }
     }
-    public fuction startPlugin($config){
+    public function startPlugin($config){
         if($config->get("version") === 1.0.0){
             $this->switchServer();
         }
         else{
-             $this->getLogger()->info(TextFormat::RED."- Incorrect plugin version. Disabling plugin...");
+             $this->getLogger()->info(TextFormat::RED."- Invalid plugin version. Disabling plugin...");
              $this->disablePlugin();
         }
     }
@@ -45,6 +45,6 @@ class Main extends PluginBase implements Listener{
         }
     }
     public function disbalePlugin(){
-        $this->getLogger()->info(TextFormat::RED."- Disabling plugin...r");
+        $this->getLogger()->info(TextFormat::RED."- Disabling plugin...");
         $this->getConfig()->set("enabled", false);
     }
