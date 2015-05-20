@@ -37,7 +37,7 @@ class Main extends PluginBase implements Listener{
                 $server_number++;
             }
         }
-        $set_server = rand(0, $server_number);
+        $set_server = mt_rand(0, $server_number);
         if($set_server === 0){
             $myserver = $this->getConfig()->get("Servers");
             $myserver = $myserver[0];
