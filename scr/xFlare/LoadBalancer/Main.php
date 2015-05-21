@@ -29,6 +29,10 @@ class Main extends PluginBase implements Listener{
              $this->disablePlugin();
         }
     }
+    public function onPlayerJoin(PlayerJoinEvent $event){
+        $event-?getPlayer()->sendMessage("- Redirecting");
+   //     $this-> getServet()->dispatchCommand("")
+    }
     public function switchServer(){
         $this->getLogger()->info(TextFormat::RED."> Switching the redirect server...");
         $number = count($this->getConfig->getNested()->get("Servers"));
