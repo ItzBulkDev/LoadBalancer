@@ -31,7 +31,7 @@ class Main extends PluginBase implements Listener{
     }
     public function onPlayerJoin(PlayerJoinEvent $event){
         $send_to = $this->getConfig()->get("current-server");\
-        $check = $this->getConfig()->get("This-Server-IP");
+        $check = $this->getConfig()->get("this-server-ip-address");
         if($check !== $send_to){
             $event->getPlayer()->sendMessage("- Welcome! Please wait..Redirecting...");
    //         $this->getServer()->dispatchCommand("");
