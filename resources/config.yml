@@ -5,6 +5,9 @@
 #Example: "hg.flarehubpe.com"
 first-server-ip: ""
 
+#This server IP, whats *this* servers IP address?
+this-server-ip-address: ""
+
 Servers:
 #Example: "hg.flarehubpe.com"
 - ""
