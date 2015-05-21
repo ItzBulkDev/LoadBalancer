@@ -30,8 +30,12 @@ class Main extends PluginBase implements Listener{
         }
     }
     public function onPlayerJoin(PlayerJoinEvent $event){
-        $event-?getPlayer()->sendMessage("- Redirecting");
-   //     $this-> getServet()->dispatchCommand("")
+        $send_to = $this->getConfig()->get("current-server");\
+        $check = $this->getConfig()->get("This-Server-IP");
+        if($check !== $send_to){
+            $event->getPlayer()->sendMessage("- Welcome! Please wait..Redirecting...");
+   //         $this->getServer()->dispatchCommand("");
+        }
     }
     public function switchServer(){
         $this->getLogger()->info(TextFormat::RED."> Switching the redirect server...");
