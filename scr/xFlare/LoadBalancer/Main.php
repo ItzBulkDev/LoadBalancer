@@ -33,19 +33,8 @@ class Main extends PluginBase implements Listener{
         $this->getLogger()->info(TextFormat::RED."> Switching the redirect server...");
         $number = count($this->getConfig->getNested()->get("Servers"));
         $set_server = mt_rand(0, $number);
-        $server_number = 0;
-        foreach($this->getConfig->getNested()->get("Servers") as $server){
-            if($server !== false){
-                if($set_server === $server_number){
-                $server_number++;
-            }
-        }
-        $set_server = mt_rand(0, $server_number);
-        if($set_server === 0){
-            $myserver = $this->getConfig()->get("Servers");
-            $myserver = $myserver[0];
-            $this->getLogger()->info(TextFormat::GREEN."- Server set to: $myserver");
-        }
+        $switch_to = $this->getConfig()->get("Servers")[$set_server];
+        $this->getLogger()->info(TextFormat::RED."- Server redirect set to: $switch_to");
     }
     public function disablePlugin(){
         $this->getLogger()->info(TextFormat::RED."- Disabling plugin...");
