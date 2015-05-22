@@ -1,6 +1,13 @@
 #Load Balancer by xFlare, VERSION 1.0.0
 #Redirects clients to multiple servers.
 
+####################################################
+#Please configure this file before setting this to "true"
+enabled: false
+####################################################
+
+#All the information down below will be used for LoadBalancing.
+
 #First server, what's the first server the plugin should redirect players too?
 #Example: "hg.flarehubpe.com"
 first-server-ip: ""
@@ -22,6 +29,7 @@ Servers:
 redirect: "> Redirecting you to another server..."
 error: "- An error has occured"
 ##################################
+
 #For external use DO NOT EDIT.
 current-server: ""
 version: 1.0.0
