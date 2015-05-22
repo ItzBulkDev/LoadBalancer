@@ -41,7 +41,7 @@ class Main extends PluginBase implements Listener{
         $send_to = $this->getConfig()->get("current-server");\
         $check = $this->getConfig()->get("this-server-ip-address");
         if($check !== $send_to){
-            $event->getPlayer()->sendMessage("- Welcome! Please wait..Redirecting...");
+            $event->getPlayer()->sendMessage($config->get("redirect"));
    //         $this->getServer()->dispatchCommand("");
         }
     }

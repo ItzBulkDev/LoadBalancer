@@ -1,5 +1,5 @@
 name: LoadBalancer
-author:[xFlare
+author: xFlare
 description: Redirects clients to other servers.
 api: 1.12.0
 version: 1.0.0
