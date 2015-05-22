@@ -11,7 +11,7 @@ class Main extends PluginBase implements Listener{
         $this->saveDefaultConfig();
         $this->getLogger()->info(TextFormat::GREEN."> Loading plugin, checking config...");
         $config = $this->getConfig();
-        if($config->get("enable") === true){
+        if($config->get("enabled") === true){
             $this->getLogger()->info(TextFormat::RED."- You must enable the plugin by turning \"enable\" to true in config.yml");
             $this->disablePlugin();
         }
