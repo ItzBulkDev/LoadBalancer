@@ -15,7 +15,7 @@ class Main extends PluginBase implements Listener{
         if(!($files->getPlugin("FastTransfer") === true){
             $this->getLogger()->info(TextFormat::RED."- You must install the plugin FastTransfer!");
             $this->getLogger()->info(TextFormat::RED."- If you have Pludler do /get and we will send a command to download FastTranser for you.");
-            $this->getLogger()->info(TextFormat::RED."- Otherwise download FastTransfer here: https://github.com/shoghicp/FastTransfer/releases);
+            $this->getLogger()->info(TextFormat::RED."- Otherwise download FastTransfer here: https://github.com/shoghicp/FastTransfer/releases");
             return true;
         }
         
