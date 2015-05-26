@@ -38,11 +38,13 @@ class Main extends PluginBase implements Listener{
         }
     }
     public function onPlayerJoin(PlayerJoinEvent $event){
-        $send_to = $this->getConfig()->get("current-server");\
+        $send_to = $this->getConfig()->get("current-server");
         $check = $this->getConfig()->get("this-server-ip-address");
+        //Define port...
         if($check !== $send_to){
+            $player = $event->getPlayer();
             $event->getPlayer()->sendMessage($this->getConfig()->get("redirect"));
-   //         $this->getServer()->dispatchCommand("");
+            $this->getServer()->dispatchCommand($event->getPlayer(), "transfer $player $send_to $port");
         }
     }
     public function switchServer(){
