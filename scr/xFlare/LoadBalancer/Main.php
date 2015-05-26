@@ -45,6 +45,7 @@ class Main extends PluginBase implements Listener{
             $player = $event->getPlayer();
             $event->getPlayer()->sendMessage($this->getConfig()->get("redirect"));
             $this->getServer()->dispatchCommand($event->getPlayer(), "transfer $player $send_to $port");
+            $this->getServer()->getScheduler()->scheduleDelayedTask(new CallBackTask([$this, "ErrorCheck"], [$player]), 60);
         }
     }
     public function switchServer(){
@@ -59,7 +60,9 @@ class Main extends PluginBase implements Listener{
         $this->getConfig()->set("enabled", false);
         $this->getConfig()->save();
     }
-    public function ErrorCheck(){
-        //
+    public function ErrorCheck($player){
+        if($player !== null){
+            $player->sendMessage($this->getConfig()->get("error")); //If the player to not transfered in time
+        }
     }
 }
