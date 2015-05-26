@@ -27,7 +27,7 @@ Servers:
 ##################################
 # Messages, you can set/change from default.
 redirect: "> Redirecting you to another server..."
-error: "- An error has occured"
+error: "- Oops! Somthing went wrong. #BlamexFlare"
 ##################################
 
 #For external use DO NOT EDIT.
