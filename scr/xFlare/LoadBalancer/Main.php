@@ -41,7 +41,7 @@ class Main extends PluginBase implements Listener{
         $send_to = $this->getConfig()->get("current-server");\
         $check = $this->getConfig()->get("this-server-ip-address");
         if($check !== $send_to){
-            $event->getPlayer()->sendMessage("- Welcome! Please wait..Redirecting...");
+            $event->getPlayer()->sendMessage($this->getConfig()->get("redirect"));
    //         $this->getServer()->dispatchCommand("");
         }
     }
@@ -56,5 +56,8 @@ class Main extends PluginBase implements Listener{
         $this->getLogger()->info(TextFormat::RED."- Disabling plugin...");
         $this->getConfig()->set("enabled", false);
         $this->getConfig()->save();
+    }
+    public function ErrorCheck(){
+        //
     }
 }
