@@ -19,7 +19,7 @@ class Main extends PluginBase implements Listener{
             return true;
         }
         
-        if($config->get("enabled") === true){
+        if($config->get("enabled") !== true){
             $this->getLogger()->info(TextFormat::RED."- You must enable the plugin by turning \"enable\" to true in config.yml");
             $this->disablePlugin();
         }
