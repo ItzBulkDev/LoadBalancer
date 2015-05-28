@@ -1,5 +1,5 @@
 # LoadBalancer
-- An effective load balancer for 0.11.0 clients.
+**An effective load balancer for 0.11.0 clients.**
 
 **What is a LoadBalancer?**
 LoadBalancer is a term developers like to use to equally distribute users across servers.
