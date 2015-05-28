@@ -50,7 +50,10 @@ class Main extends PluginBase implements Listener{
     }
     public function switchServer(){
         $this->getLogger()->info(TextFormat::RED."> Switching the redirect server...");
-        $number = count($this->getConfig->getNested()->get("Servers"));
+        $number = count($this->getConfig->getNested()->get("Servers")) - 1;
+        if($number < 0){
+            $number = 0;
+        }
         $set_server = mt_rand(0, $number);
         $switch_to = $this->getConfig()->get("Servers")[$set_server];
         $this->getLogger()->info(TextFormat::RED."- Server redirect set to: $switch_to");
