@@ -56,6 +56,8 @@ class Main extends PluginBase implements Listener{
         }
         $set_server = mt_rand(0, $number);
         $switch_to = $this->getConfig()->get("Servers")[$set_server];
+        $this->getConfig()->set("current-server", $switch_to);
+        $this->getConfig()->save();
         $this->getLogger()->info(TextFormat::RED."- Server redirect set to: $switch_to");
     }
     public function disablePlugin(){
