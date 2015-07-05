@@ -1,5 +1,6 @@
 name: LoadBalancer
 author:[LDX, xFlare]
 description: Redirects clients to other servers.
+main: xFlare\LoadBalancer
 api: 1.12.0
 version: 1.0.0
