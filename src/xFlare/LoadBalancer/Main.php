@@ -1,11 +1,10 @@
 <?php
 namespace xFlare\LoadBalancer;
-
+use pocketmine\event\player\PlayerPreLoginEvent;
 use pocketmine\event\player\PlayerCommandPreprocessEvent;
 use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
 use pocketmine\Server;
-
 class Main extends PluginBase implements Listener{
     public function onEnable(){
         $this->saveDefaultConfig();
@@ -37,13 +36,12 @@ class Main extends PluginBase implements Listener{
              $this->disablePlugin();
         }
     }
-    public function onPlayerJoin(PlayerJoinEvent $event){
+    public function onPlayerPreLogin(PlayerPreLoginEvent $event){
         $send_to = $this->getConfig()->get("current-server");
         $check = $this->getConfig()->get("this-server-ip-address");
         //Define port...
         if($check !== $send_to){
             $player = $event->getPlayer();
-            $event->getPlayer()->sendMessage($this->getConfig()->get("redirect"));
             $this->getServer()->dispatchCommand($event->getPlayer(), "transfer $player $send_to $port");
             $this->getServer()->getScheduler()->scheduleDelayedTask(new CallBackTask([$this, "ErrorCheck"], [$player]), 60);
         }
