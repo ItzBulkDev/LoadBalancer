@@ -11,10 +11,11 @@ class Main extends PluginBase implements Listener{
         $this->getLogger()->info(TextFormat::GREEN."> Loading plugin, checking config...");
         $config = $this->getConfig();
         $files = $this->getServer()->getPluginManager();
-        if (!$files->getPlugin("FastTransfer"){
-            $this->getLogger()->info(TextFormat::RED."- You must install the plugin FastTransfer!");
-            $this->getLogger()->info(TextFormat::GREEN."- If you have Pundler do /get and we will send a command to download FastTranser for you.");
-            $this->getLogger()->info(TextFormat::GREEN."- Otherwise download FastTransfer here: https://github.com/shoghicp/FastTransfer/releases");
+        if(is_dir($this->getServer()->getPluginPath()."FastTransfer")){
+			$this->getLogger()->info(TextFormat::GREEN."LoadBalancer has been loaded with FastTransfer!!");
+			}else{
+				$this->getLogger()->info(TextFormat::RED."Please install FastTransfer!");
+			}
             return true;
         }
         
